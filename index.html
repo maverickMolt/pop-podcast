@@ -76,7 +76,7 @@ section{padding:clamp(60px,10vw,100px) clamp(1rem,4vw,2rem)}
 /* HOSTS */
 .hosts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 @media(max-width:600px){.hosts-grid{grid-template-columns:1fr}}
-.host-card{background:var(--surface);border-radius:12px;padding:2rem;text-align:center;transition:transform 0.2s}
+.host-card{background:var(--surface);border-radius:12px;padding:2rem;text-align:center;transition:transform 0.2s;display:flex;flex-direction:column;align-items:center}
 .host-card:hover{transform:translateY(-4px)}
 .host-photo{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;display:block;border:2px solid rgba(240,237,232,0.1);background:var(--black)}
 .host-photo-placeholder{width:110px;height:110px;border-radius:50%;background:var(--black);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--blue);border:2px solid rgba(45,106,159,0.3)}
@@ -268,26 +268,30 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/D5603AQEcQ_5TFSsqYg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715120246371?e=1747872000&v=beta&t=Iml4YyJ65oDI0M_q7sIvCkJpxzqWyG8mLRIQwj7PJZY" alt="Matt Kramer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">MK</div>
-        <div class="host-name">Matt Kramer</div><div class="host-creds">Harvard University</div>
-        <p class="host-bio">Territory manager turned podcast producer. Obsessed with the gap between what headlines claim and what studies actually show.</p>
+        <div class="host-name">Matt Kramer</div>
+        <div class="host-creds">Harvard University · SteriCube</div>
+        <p class="host-bio">Harvard-educated builder and territory manager operating at the intersection of healthcare and technology. Matt spent years deep in blockchain, Web3, and NFT ecosystems before turning his systems-thinking to health science communication. He's the one who notices when a study's sample size is buried in paragraph seven — and won't let it slide.</p>
       </div>
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/C4D03AQHzlLLpJIBmZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517337908350?e=1747872000&v=beta&t=kFkHqWJEu3Bh4V4OvOPJ3BtL1Lw7hm65OiWP8CQBLSQ" alt="Sara Lovett" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">SL</div>
-        <div class="host-name">Sara Lovett, MPH</div><div class="host-creds">Master of Public Health</div>
-        <p class="host-bio">The show's research anchor. Sara verifies every citation and spots the difference between correlation and causation.</p>
+        <div class="host-name">Sara Lovett, MPH</div>
+        <div class="host-creds">Senior Epidemiologist · Minnesota Dept. of Health</div>
+        <p class="host-bio">Senior Epidemiologist at the Minnesota Department of Health with an MPH from George Washington University. Sara works with real population-level data every day — which means she immediately recognizes when media coverage strips a study of its statistical context. She is the show's scientific backstop: nothing gets past her without a citation.</p>
       </div>
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/C5603AQEqz8fF6BAlTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516961987640?e=1747872000&v=beta&t=7oqMWXf2NX-vmZULnGIl7GX0xG47cNYEOZxaT-L5I4s" alt="Lauren Snyder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">LS</div>
-        <div class="host-name">Lauren Snyder</div><div class="host-creds">Healthcare Professional</div>
-        <p class="host-bio">Brings the perspective every listener has — smart, curious, and skeptical of claims that seem too clean to be true.</p>
+        <div class="host-name">Lauren Snyder</div>
+        <div class="host-creds">Healthcare Professional</div>
+        <p class="host-bio">A healthcare professional who brings the perspective every listener brings to the table — informed, skeptical, and tired of health claims that arrive pre-packaged with too-clean conclusions. Lauren asks the questions that get glossed over in press releases, and keeps the conversation grounded in what actually matters to patients.</p>
       </div>
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/D5603AQGuKyf8W3MoeA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681837107267?e=1747872000&v=beta&t=SsNBRjMqY9YMJBkSd0q_QL28fV27pmGcT5TBZj4Kw0Y" alt="Dr. Mike Herring" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">MH</div>
-        <div class="host-name">Dr. Mike Herring, MD</div><div class="host-creds">Medical Doctor</div>
-        <p class="host-bio">The medical authority in the room. Separates what sounds medical from what is medically sound.</p>
+        <div class="host-name">Dr. Mike Herring, MD, CPT</div>
+        <div class="host-creds">Physician · Certified Personal Trainer</div>
+        <p class="host-bio">Physician and Certified Personal Trainer who describes himself as being "in search of truth over controversy" — which makes him the perfect co-host for this show. Dr. Mike brings dual fluency in clinical medicine and performance science, allowing him to interrogate health claims from both sides of the exam table. If a study's conclusions don't survive contact with real patients, he'll say so.</p>
       </div>
     </div>
   </div>
