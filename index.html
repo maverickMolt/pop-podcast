@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P.O.P. — The Power of the Point | Coming Soon</title>
+<meta name="description" content="The Power of the Point (P.O.P.) is a science myth-busting podcast. Upheld. Debunked. Misframed. Launching March 27, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0D0D0D;--text:#F0EDE8;--blue:#2D6A9F;--surface:#3A3A3A;
+  --green:#2ECC71;--red:#E84040;--amber:#F5A623;
+  --font-head:'Space Grotesk',sans-serif;--font-body:'Source Serif 4',serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--font-body);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(240,237,232,0.08);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{font-family:var(--font-head);font-weight:700;font-size:1.4rem;color:var(--text);letter-spacing:0.05em}
+.logo-dots{display:flex;gap:4px;align-items:center}
+.logo-dots span{width:7px;height:7px;border-radius:50%}
+.logo-full{font-family:var(--font-head);font-size:0.75rem;color:rgba(240,237,232,0.5);font-weight:400;letter-spacing:0.05em;display:none}
+@media(min-width:600px){.logo-full{display:block}}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(240,237,232,0.6);text-decoration:none;font-family:var(--font-head);font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{gap:1rem}.nav-links li:nth-child(n+3){display:none}}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 2rem 4rem;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(45,106,159,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:900px;position:relative;z-index:1}
+.coming-soon-badge{display:inline-block;background:rgba(45,106,159,0.15);border:1px solid rgba(45,106,159,0.4);color:var(--blue);font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:2rem}
+.hero-headline{font-family:var(--font-head);font-weight:700;font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;color:var(--text);margin-bottom:1.5rem}
+.hero-headline em{font-style:normal;color:rgba(240,237,232,0.55)}
+.hero-sub{font-family:var(--font-head);font-size:clamp(1rem,2vw,1.25rem);color:rgba(240,237,232,0.6);margin-bottom:2.5rem;font-weight:400}
+.verdict-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.verdict-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:100px;font-family:var(--font-head);font-weight:700;font-size:0.85rem;letter-spacing:0.08em;border:1.5px solid;transition:transform 0.2s}
+.verdict-pill:hover{transform:translateY(-2px)}
+.pill-upheld{color:var(--green);border-color:var(--green);background:rgba(46,204,113,0.1)}
+.pill-debunked{color:var(--red);border-color:var(--red);background:rgba(232,64,64,0.1)}
+.pill-misframed{color:var(--amber);border-color:var(--amber);background:rgba(245,166,35,0.1)}
+.countdown{display:flex;gap:2rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap}
+.count-block{text-align:center}
+.count-num{font-family:var(--font-head);font-weight:700;font-size:clamp(2rem,5vw,3.5rem);color:var(--text);display:block;line-height:1}
+.count-label{font-family:var(--font-head);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,232,0.4);margin-top:4px;display:block}
+.cta-btn{display:inline-block;background:var(--blue);color:var(--text);font-family:var(--font-head);font-weight:700;font-size:1rem;padding:16px 36px;border-radius:6px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:none;cursor:pointer;letter-spacing:0.02em}
+.cta-btn:hover{background:#3a7fc1;transform:translateY(-1px)}
+
+/* SECTIONS */
+section{padding:100px 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+.section-title{font-family:var(--font-head);font-weight:700;font-size:clamp(1.8rem,4vw,3rem);color:var(--text);margin-bottom:3rem;line-height:1.1}
+.divider{height:1px;background:rgba(240,237,232,0.08);margin:0}
+
+/* ABOUT */
+#about{background:rgba(58,58,58,0.2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.about-desc{font-size:1.1rem;color:rgba(240,237,232,0.75);line-height:1.8}
+.verdict-cards{display:flex;flex-direction:column;gap:1rem}
+.verdict-card{background:var(--surface);border-radius:8px;padding:1.25rem 1.5rem;border-left:4px solid}
+.verdict-card.upheld{border-color:var(--green)}
+.verdict-card.debunked{border-color:var(--red)}
+.verdict-card.misframed{border-color:var(--amber)}
+.verdict-card .vc-badge{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;margin-bottom:0.5rem}
+.verdict-card.upheld .vc-badge{color:var(--green)}
+.verdict-card.debunked .vc-badge{color:var(--red)}
+.verdict-card.misframed .vc-badge{color:var(--amber)}
+.verdict-card p{font-size:0.9rem;color:rgba(240,237,232,0.7);line-height:1.6}
+
+/* HOSTS */
+.hosts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+@media(max-width:600px){.hosts-grid{grid-template-columns:1fr}}
+.host-card{background:var(--surface);border-radius:12px;padding:2rem;text-align:center;transition:transform 0.2s}
+.host-card:hover{transform:translateY(-4px)}
+.host-photo{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;display:block;border:2px solid rgba(240,237,232,0.1);background:var(--black)}
+.host-photo-placeholder{width:110px;height:110px;border-radius:50%;background:var(--black);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--blue);border:2px solid rgba(45,106,159,0.3)}
+.host-name{font-family:var(--font-head);font-weight:700;font-size:1.1rem;color:var(--text);margin-bottom:0.25rem}
+.host-creds{font-family:var(--font-head);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem}
+.host-bio{font-size:0.9rem;color:rgba(240,237,232,0.65);line-height:1.6}
+
+/* EPISODES */
+#episodes{background:rgba(58,58,58,0.15)}
+.episodes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+@media(max-width:900px){.episodes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.episodes-grid{grid-template-columns:1fr}}
+.ep-card{background:var(--surface);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:transform 0.2s}
+.ep-card:hover{transform:translateY(-3px)}
+.ep-verdict{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border:1px solid}
+.ep-verdict.upheld{color:var(--green);border-color:var(--green);background:rgba(46,204,113,0.1)}
+.ep-verdict.debunked{color:var(--red);border-color:var(--red);background:rgba(232,64,64,0.1)}
+.ep-verdict.misframed{color:var(--amber);border-color:var(--amber);background:rgba(245,166,35,0.1)}
+.ep-title{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--text);line-height:1.3}
+.ep-claim{font-family:var(--font-body);font-style:italic;font-size:0.875rem;color:rgba(240,237,232,0.6);line-height:1.5;flex:1}
+.ep-coming{font-family:var(--font-head);font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,232,0.3);margin-top:auto;padding-top:0.5rem;border-top:1px solid rgba(240,237,232,0.08)}
+
+/* NEWSLETTER */
+#newsletter{text-align:center}
+.newsletter-sub{font-size:1.05rem;color:rgba(240,237,232,0.65);max-width:540px;margin:0 auto 2rem;line-height:1.7}
+.newsletter-form{display:flex;gap:12px;max-width:480px;margin:0 auto 1rem;flex-wrap:wrap;justify-content:center}
+.newsletter-form input{flex:1;min-width:200px;background:var(--surface);border:1px solid rgba(240,237,232,0.15);border-radius:6px;padding:14px 18px;color:var(--text);font-family:var(--font-head);font-size:0.95rem;outline:none;transition:border-color 0.2s}
+.newsletter-form input:focus{border-color:var(--blue)}
+.newsletter-form input::placeholder{color:rgba(240,237,232,0.3)}
+.newsletter-form button{background:var(--blue);color:var(--text);border:none;border-radius:6px;padding:14px 28px;font-family:var(--font-head);font-weight:700;font-size:0.95rem;cursor:pointer;transition:background 0.2s;white-space:nowrap}
+.newsletter-form button:hover{background:#3a7fc1}
+.newsletter-fine{font-size:0.8rem;color:rgba(240,237,232,0.35);font-family:var(--font-head)}
+
+/* LISTEN */
+#listen{background:rgba(58,58,58,0.2);text-align:center}
+.listen-sub{font-size:1rem;color:rgba(240,237,232,0.55);margin-bottom:2.5rem;font-family:var(--font-head)}
+.platform-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.platform-btn{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid rgba(240,237,232,0.12);border-radius:8px;padding:14px 24px;color:var(--text);text-decoration:none;font-family:var(--font-head);font-weight:600;font-size:0.9rem;transition:all 0.2s;position:relative}
+.platform-btn:hover{border-color:rgba(240,237,232,0.3);transform:translateY(-2px)}
+.platform-btn:hover::after{content:'Coming Soon';position:absolute;top:-32px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid rgba(240,237,232,0.15);padding:4px 10px;border-radius:4px;font-size:0.7rem;white-space:nowrap;color:rgba(240,237,232,0.6)}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
+.footer-logo{font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--text)}
+.footer-tagline{font-family:var(--font-body);font-style:italic;color:rgba(240,237,232,0.45);font-size:0.9rem}
+.social-links{display:flex;gap:1.5rem}
+.social-links a{color:rgba(240,237,232,0.4);text-decoration:none;font-family:var(--font-head);font-size:0.85rem;font-weight:600;transition:color 0.2s;letter-spacing:0.05em}
+.social-links a:hover{color:var(--text)}
+.footer-copy{font-family:var(--font-head);font-size:0.75rem;color:rgba(240,237,232,0.25)}
+.footer-fine{font-family:var(--font-body);font-style:italic;font-size:0.8rem;color:rgba(240,237,232,0.2)}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-mark">P.O.P.</span>
+      <div class="logo-dots">
+        <span style="background:#2ECC71"></span>
+        <span style="background:#E84040"></span>
+        <span style="background:#F5A623"></span>
+      </div>
+      <span class="logo-full">The Power of the Point</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#hosts">Hosts</a></li>
+      <li><a href="#episodes">Episodes</a></li>
+      <li><a href="#listen">Listen</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="coming-soon-badge">Coming March 27, 2026</div>
+    <h1 class="hero-headline">
+      Most bad health science<br>isn't fake.<br>
+      <em>It's out of context.</em>
+    </h1>
+    <p class="hero-sub">Every episode ends with a verdict.</p>
+    <div class="verdict-row">
+      <span class="verdict-pill pill-upheld">✓ UPHELD</span>
+      <span class="verdict-pill pill-debunked">✗ DEBUNKED</span>
+      <span class="verdict-pill pill-misframed">~ MISFRAMED</span>
+    </div>
+    <div class="countdown">
+      <div class="count-block"><span class="count-num" id="days">00</span><span class="count-label">Days</span></div>
+      <div class="count-block"><span class="count-num" id="hours">00</span><span class="count-label">Hours</span></div>
+      <div class="count-block"><span class="count-num" id="mins">00</span><span class="count-label">Minutes</span></div>
+      <div class="count-block"><span class="count-num" id="secs">00</span><span class="count-label">Seconds</span></div>
+    </div>
+    <a href="#newsletter" class="cta-btn">Join the Waitlist →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About the Show</div>
+    <h2 class="section-title">Science myth-busting.<br>On the record.</h2>
+    <div class="about-grid fade-up">
+      <div>
+        <p class="about-desc">The Power of the Point applies a rigorous three-verdict framework to the health and science claims flooding your feed. Upheld. Debunked. Or — most importantly — Misframed.<br><br>Because most bad health science isn't fabricated. It's real data, stripped of context, scaled to a headline. We name that mechanism. We explain it. And we give you the tools to spot it yourself.<br><br>No wellness theater. No false balance. Just the study, the claim, and our verdict.</p>
+      </div>
+      <div class="verdict-cards">
+        <div class="verdict-card upheld">
+          <div class="vc-badge">✓ UPHELD</div>
+          <p>The science holds up. We tell you why, and what the evidence actually shows.</p>
+        </div>
+        <div class="verdict-card debunked">
+          <div class="vc-badge">✗ DEBUNKED</div>
+          <p>The claim failed review. We show our work.</p>
+        </div>
+        <div class="verdict-card misframed">
+          <div class="vc-badge">~ MISFRAMED</div>
+          <p>The most important verdict. Real data. Wrong conclusion. We expose the gap.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="hosts">
+  <div class="section-inner">
+    <div class="section-label">The Hosts</div>
+    <h2 class="section-title">The team behind the verdict.</h2>
+    <div class="hosts-grid fade-up">
+      <div class="host-card">
+        <img class="host-photo" src="https://media.licdn.com/dms/image/v2/D5603AQEcQ_5TFSsqYg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715120246371?e=1747872000&v=beta&t=Iml4YyJ65oDI0M_q7sIvCkJpxzqWyG8mLRIQwj7PJZY" alt="Matt Kramer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="host-photo-placeholder" style="display:none">MK</div>
+        <div class="host-name">Matt Kramer</div>
+        <div class="host-creds">Harvard University</div>
+        <p class="host-bio">Territory manager turned podcast producer. Obsessed with the gap between what headlines claim and what studies actually show.</p>
+      </div>
+      <div class="host-card">
+        <img class="host-photo" src="https://media.licdn.com/dms/image/v2/C4D03AQHzlLLpJIBmZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517337908350?e=1747872000&v=beta&t=kFkHqWJEu3Bh4V4OvOPJ3BtL1Lw7hm65OiWP8CQBLSQ" alt="Sara Lovett" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="host-photo-placeholder" style="display:none">SL</div>
+        <div class="host-name">Sara Lovett, MPH</div>
+        <div class="host-creds">Master of Public Health</div>
+        <p class="host-bio">The show's research anchor. Sara verifies every citation and spots the difference between correlation and causation.</p>
+      </div>
+      <div class="host-card">
+        <img class="host-photo" src="https://media.licdn.com/dms/image/v2/C5603AQEqz8fF6BAlTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516961987640?e=1747872000&v=beta&t=7oqMWXf2NX-vmZULnGIl7GX0xG47cNYEOZxaT-L5I4s" alt="Lauren Snyder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="host-photo-placeholder" style="display:none">LS</div>
+        <div class="host-name">Lauren Snyder</div>
+        <div class="host-creds">Healthcare Professional</div>
+        <p class="host-bio">Brings the perspective every listener has — smart, curious, and skeptical of health claims that seem too clean to be true.</p>
+      </div>
+      <div class="host-card">
+        <img class="host-photo" src="https://media.licdn.com/dms/image/v2/D5603AQGuKyf8W3MoeA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681837107267?e=1747872000&v=beta&t=SsNBRjMqY9YMJBkSd0q_QL28fV27pmGcT5TBZj4Kw0Y" alt="Dr. Mike Herring" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="host-photo-placeholder" style="display:none">MH</div>
+        <div class="host-name">Dr. Mike Herring, MD</div>
+        <div class="host-creds">Medical Doctor</div>
+        <p class="host-bio">The medical authority in the room. Separates what sounds medical from what is medically sound.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="episodes">
+  <div class="section-inner">
+    <div class="section-label">Coming Episodes</div>
+    <h2 class="section-title">Coming in March.<br>Judge for yourself.</h2>
+    <div class="episodes-grid fade-up">
+      <div class="ep-card">
+        <span class="ep-verdict misframed">~ MISFRAMED</span>
+        <div class="ep-title">The Ozempic Myth Machine</div>
+        <p class="ep-claim">"GLP-1 drugs cause muscle loss and you'll gain it all back when you stop."</p>
+        <div class="ep-coming">Coming Soon · Episode 1</div>
+      </div>
+      <div class="ep-card">
+        <span class="ep-verdict debunked">✗ DEBUNKED</span>
+        <div class="ep-title">Seed Oil Panic</div>
+        <p class="ep-claim">"Seed oils are toxic and cause obesity, cancer, and heart disease."</p>
+        <div class="ep-coming">Coming Soon · Episode 2</div>
+      </div>
+      <div class="ep-card">
+        <span class="ep-verdict debunked">✗ DEBUNKED</span>
+        <div class="ep-title">AI Said I Have Cancer</div>
+        <p class="ep-claim">"I described my symptoms to ChatGPT and it diagnosed me."</p>
+        <div class="ep-coming">Coming Soon · Episode 3</div>
+      </div>
+      <div class="ep-card">
+        <span class="ep-verdict debunked">✗ DEBUNKED</span>
+        <div class="ep-title">The 10,000 Steps Lie</div>
+        <p class="ep-claim">"Anything less than 10,000 steps is basically sedentary."</p>
+        <div class="ep-coming">Coming Soon · Episode 4</div>
+      </div>
+      <div class="ep-card">
+        <span class="ep-verdict misframed">~ MISFRAMED</span>
+        <div class="ep-title">Supplements Will Save You</div>
+        <p class="ep-claim">"Vitamin D and magnesium deficiency is behind almost every chronic disease."</p>
+        <div class="ep-coming">Coming Soon · Episode 5</div>
+      </div>
+      <div class="ep-card">
+        <span class="ep-verdict misframed">~ MISFRAMED</span>
+        <div class="ep-title">Sleep 8 Hours or Die</div>
+        <p class="ep-claim">"Less than 8 hours of sleep causes dementia and early death."</p>
+        <div class="ep-coming">Coming Soon · Episode 6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="newsletter">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-label">Stay in the Loop</div>
+    <h2 class="section-title">Get the verdict first.</h2>
+    <p class="newsletter-sub">Weekly science briefings. No wellness theater. No false balance. Just the study, the claim, and our verdict — delivered before the episode drops.</p>
+    <form class="newsletter-form fade-up" onsubmit="handleSubscribe(event)">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit">Subscribe →</button>
+    </form>
+    <p class="newsletter-fine">No spam. Unsubscribe anytime. We cite our sources — including this email list.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="listen">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-label">Listen</div>
+    <h2 class="section-title">Available March 27, 2026.</h2>
+    <p class="listen-sub">Subscribe now so you don't miss the first verdict.</p>
+    <div class="platform-btns fade-up">
+      <a href="#" class="platform-btn">🎵 Spotify</a>
+      <a href="#" class="platform-btn">🎙 Apple Podcasts</a>
+      <a href="#" class="platform-btn">▶️ YouTube</a>
+      <a href="#" class="platform-btn">📡 RSS Feed</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">P.O.P.</div>
+    <div class="footer-tagline">The science is in. We read it.</div>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter / X</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-copy">© 2026 The Power of the Point. All rights reserved.</div>
+    <div class="footer-fine">We read the studies so you don't have to. But you probably should.</div>
+  </div>
+</footer>
+
+<script>
+// Countdown
+function updateCountdown(){
+  const target=new Date('2026-03-27T09:00:00-06:00');
+  const now=new Date();
+  const diff=target-now;
+  if(diff<=0){document.querySelector('.countdown').innerHTML='<div style="font-family:var(--font-head);font-size:1.5rem;color:var(--green)">We\'re live! 🎙</div>';return;}
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor((diff%86400000)/3600000);
+  const m=Math.floor((diff%3600000)/60000);
+  const s=Math.floor((diff%60000)/1000);
+  document.getElementById('days').textContent=String(d).padStart(2,'0');
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('mins').textContent=String(m).padStart(2,'0');
+  document.getElementById('secs').textContent=String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// Scroll animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:0.15});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+// Newsletter
+function handleSubscribe(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.textContent='✓ You\'re on the list!';
+  btn.style.background='var(--green)';
+  btn.disabled=true;
+}
+</script>
+</body>
+</html>
