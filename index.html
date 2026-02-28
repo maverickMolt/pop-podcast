@@ -25,8 +25,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,0.9
 .logo-mark{font-family:var(--font-head);font-weight:700;font-size:1.4rem;color:var(--text);letter-spacing:0.05em}
 .logo-dots{display:flex;gap:4px;align-items:center}
 .logo-dots span{width:7px;height:7px;border-radius:50%}
-.logo-full{font-family:var(--font-head);font-size:0.75rem;color:rgba(240,237,232,0.5);font-weight:400;letter-spacing:0.05em;display:none}
-@media(min-width:600px){.logo-full{display:block}}
+.logo-full{font-family:var(--font-head);font-size:0.75rem;color:rgba(240,237,232,0.5);font-weight:400;letter-spacing:0.05em}
+@media(max-width:600px){.logo-full{display:none}}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:rgba(240,237,232,0.6);text-decoration:none;font-family:var(--font-head);font-size:0.85rem;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:var(--text)}
@@ -38,8 +38,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,0.9
 .hero-inner{max-width:900px;position:relative;z-index:1}
 .coming-soon-badge{display:inline-block;background:rgba(45,106,159,0.15);border:1px solid rgba(45,106,159,0.4);color:var(--blue);font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:2rem}
 .hero-headline{font-family:var(--font-head);font-weight:700;font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;color:var(--text);margin-bottom:1.5rem}
-.hero-headline em{font-style:normal;color:rgba(240,237,232,0.55)}
-.hero-sub{font-family:var(--font-head);font-size:clamp(1rem,2vw,1.25rem);color:rgba(240,237,232,0.6);margin-bottom:2.5rem;font-weight:400}
+.hero-headline em{font-style:normal;color:rgba(240,237,232,0.5)}
+.hero-sub{font-family:var(--font-head);font-size:clamp(1rem,2vw,1.25rem);color:rgba(240,237,232,0.6);margin-bottom:2.5rem}
 .verdict-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
 .verdict-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:100px;font-family:var(--font-head);font-weight:700;font-size:0.85rem;letter-spacing:0.08em;border:1.5px solid;transition:transform 0.2s}
 .verdict-pill:hover{transform:translateY(-2px)}
@@ -50,7 +50,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,0.9
 .count-block{text-align:center}
 .count-num{font-family:var(--font-head);font-weight:700;font-size:clamp(2rem,5vw,3.5rem);color:var(--text);display:block;line-height:1}
 .count-label{font-family:var(--font-head);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,232,0.4);margin-top:4px;display:block}
-.cta-btn{display:inline-block;background:var(--blue);color:var(--text);font-family:var(--font-head);font-weight:700;font-size:1rem;padding:16px 36px;border-radius:6px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:none;cursor:pointer;letter-spacing:0.02em}
+.cta-btn{display:inline-block;background:var(--blue);color:var(--text);font-family:var(--font-head);font-weight:700;font-size:1rem;padding:16px 36px;border-radius:6px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:none;cursor:pointer}
 .cta-btn:hover{background:#3a7fc1;transform:translateY(-1px)}
 
 /* SECTIONS */
@@ -58,22 +58,18 @@ section{padding:100px 2rem}
 .section-inner{max-width:1200px;margin:0 auto}
 .section-label{font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
 .section-title{font-family:var(--font-head);font-weight:700;font-size:clamp(1.8rem,4vw,3rem);color:var(--text);margin-bottom:3rem;line-height:1.1}
-.divider{height:1px;background:rgba(240,237,232,0.08);margin:0}
+.divider{height:1px;background:rgba(240,237,232,0.08)}
 
 /* ABOUT */
 #about{background:rgba(58,58,58,0.2)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr}}
-.about-desc{font-size:1.1rem;color:rgba(240,237,232,0.75);line-height:1.8}
+.about-desc{font-size:1.05rem;color:rgba(240,237,232,0.75);line-height:1.85}
 .verdict-cards{display:flex;flex-direction:column;gap:1rem}
 .verdict-card{background:var(--surface);border-radius:8px;padding:1.25rem 1.5rem;border-left:4px solid}
-.verdict-card.upheld{border-color:var(--green)}
-.verdict-card.debunked{border-color:var(--red)}
-.verdict-card.misframed{border-color:var(--amber)}
-.verdict-card .vc-badge{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;margin-bottom:0.5rem}
-.verdict-card.upheld .vc-badge{color:var(--green)}
-.verdict-card.debunked .vc-badge{color:var(--red)}
-.verdict-card.misframed .vc-badge{color:var(--amber)}
+.verdict-card.upheld{border-color:var(--green)}.verdict-card.debunked{border-color:var(--red)}.verdict-card.misframed{border-color:var(--amber)}
+.vc-badge{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;margin-bottom:0.5rem}
+.verdict-card.upheld .vc-badge{color:var(--green)}.verdict-card.debunked .vc-badge{color:var(--red)}.verdict-card.misframed .vc-badge{color:var(--amber)}
 .verdict-card p{font-size:0.9rem;color:rgba(240,237,232,0.7);line-height:1.6}
 
 /* HOSTS */
@@ -87,20 +83,57 @@ section{padding:100px 2rem}
 .host-creds{font-family:var(--font-head);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem}
 .host-bio{font-size:0.9rem;color:rgba(240,237,232,0.65);line-height:1.6}
 
-/* EPISODES */
+/* EPISODES — FLIP CARDS */
 #episodes{background:rgba(58,58,58,0.15)}
 .episodes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:900px){.episodes-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:550px){.episodes-grid{grid-template-columns:1fr}}
-.ep-card{background:var(--surface);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:transform 0.2s}
-.ep-card:hover{transform:translateY(-3px)}
+
+/* Flip card container */
+.flip-card{perspective:1000px;height:420px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;background:var(--surface)}
+.flip-back{transform:rotateY(180deg);align-items:center;justify-content:center;text-align:center;background:#1a1a1a;border:1px solid rgba(240,237,232,0.08)}
+
+/* Front face */
 .ep-verdict{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border:1px solid}
 .ep-verdict.upheld{color:var(--green);border-color:var(--green);background:rgba(46,204,113,0.1)}
 .ep-verdict.debunked{color:var(--red);border-color:var(--red);background:rgba(232,64,64,0.1)}
 .ep-verdict.misframed{color:var(--amber);border-color:var(--amber);background:rgba(245,166,35,0.1)}
 .ep-title{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--text);line-height:1.3}
-.ep-claim{font-family:var(--font-body);font-style:italic;font-size:0.875rem;color:rgba(240,237,232,0.6);line-height:1.5;flex:1}
-.ep-coming{font-family:var(--font-head);font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,232,0.3);margin-top:auto;padding-top:0.5rem;border-top:1px solid rgba(240,237,232,0.08)}
+.ep-claim{font-family:var(--font-body);font-style:italic;font-size:0.875rem;color:rgba(240,237,232,0.6);line-height:1.5}
+.ep-headlines{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.ep-headline-link{font-size:0.75rem;color:rgba(240,237,232,0.45);text-decoration:none;font-family:var(--font-head);line-height:1.3;padding:6px 8px;background:rgba(0,0,0,0.3);border-radius:4px;border-left:2px solid rgba(240,237,232,0.15);transition:color 0.2s,border-color 0.2s}
+.ep-headline-link:hover{color:var(--text);border-color:var(--blue)}
+.ep-source{font-size:0.65rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:rgba(240,237,232,0.25);display:block;margin-bottom:2px}
+
+/* Voting */
+.vote-section{margin-top:auto;border-top:1px solid rgba(240,237,232,0.08);padding-top:0.75rem}
+.vote-prompt{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,237,232,0.4);margin-bottom:8px}
+.vote-btns{display:flex;gap:6px;flex-wrap:wrap}
+.vote-btn{flex:1;min-width:60px;padding:7px 4px;border-radius:6px;border:1px solid;background:transparent;cursor:pointer;font-family:var(--font-head);font-size:0.65rem;font-weight:700;letter-spacing:0.05em;transition:all 0.2s}
+.vote-btn.upheld{color:var(--green);border-color:rgba(46,204,113,0.3)}.vote-btn.upheld:hover,.vote-btn.upheld.voted{background:rgba(46,204,113,0.15);border-color:var(--green)}
+.vote-btn.debunked{color:var(--red);border-color:rgba(232,64,64,0.3)}.vote-btn.debunked:hover,.vote-btn.debunked.voted{background:rgba(232,64,64,0.15);border-color:var(--red)}
+.vote-btn.misframed{color:var(--amber);border-color:rgba(245,166,35,0.3)}.vote-btn.misframed:hover,.vote-btn.misframed.voted{background:rgba(245,166,35,0.15);border-color:var(--amber)}
+.vote-btn:disabled{cursor:default;opacity:0.7}
+.vote-bars{display:flex;flex-direction:column;gap:5px;margin-top:8px}
+.vote-bar-row{display:flex;align-items:center;gap:8px}
+.vote-bar-label{font-family:var(--font-head);font-size:0.6rem;font-weight:700;width:60px;letter-spacing:0.05em}
+.vote-bar-label.upheld{color:var(--green)}.vote-bar-label.debunked{color:var(--red)}.vote-bar-label.misframed{color:var(--amber)}
+.vote-bar-track{flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.vote-bar-fill{height:100%;border-radius:3px;transition:width 0.6s ease}
+.vote-bar-fill.upheld{background:var(--green)}.vote-bar-fill.debunked{background:var(--red)}.vote-bar-fill.misframed{background:var(--amber)}
+.vote-bar-pct{font-family:var(--font-head);font-size:0.6rem;color:rgba(240,237,232,0.4);width:28px;text-align:right}
+.vote-total{font-family:var(--font-head);font-size:0.65rem;color:rgba(240,237,232,0.3);margin-top:6px;text-align:center}
+
+/* Back face */
+.flip-back-icon{font-size:3rem;margin-bottom:1rem}
+.flip-back-title{font-family:var(--font-head);font-weight:700;font-size:1.1rem;color:var(--text);margin-bottom:0.75rem}
+.flip-back-msg{font-size:0.85rem;color:rgba(240,237,232,0.55);line-height:1.6;font-family:var(--font-body);font-style:italic;margin-bottom:1.5rem}
+.flip-back-date{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);padding:6px 16px;border:1px solid rgba(45,106,159,0.4);border-radius:100px;display:inline-block;margin-bottom:1.5rem}
+.flip-back-btn{font-family:var(--font-head);font-size:0.75rem;color:rgba(240,237,232,0.3);background:transparent;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.flip-hint{font-family:var(--font-head);font-size:0.65rem;color:rgba(240,237,232,0.2);letter-spacing:0.08em;text-align:right;margin-top:auto;padding-top:4px}
 
 /* NEWSLETTER */
 #newsletter{text-align:center}
@@ -109,7 +142,7 @@ section{padding:100px 2rem}
 .newsletter-form input{flex:1;min-width:200px;background:var(--surface);border:1px solid rgba(240,237,232,0.15);border-radius:6px;padding:14px 18px;color:var(--text);font-family:var(--font-head);font-size:0.95rem;outline:none;transition:border-color 0.2s}
 .newsletter-form input:focus{border-color:var(--blue)}
 .newsletter-form input::placeholder{color:rgba(240,237,232,0.3)}
-.newsletter-form button{background:var(--blue);color:var(--text);border:none;border-radius:6px;padding:14px 28px;font-family:var(--font-head);font-weight:700;font-size:0.95rem;cursor:pointer;transition:background 0.2s;white-space:nowrap}
+.newsletter-form button{background:var(--blue);color:var(--text);border:none;border-radius:6px;padding:14px 28px;font-family:var(--font-head);font-weight:700;font-size:0.95rem;cursor:pointer;transition:background 0.2s}
 .newsletter-form button:hover{background:#3a7fc1}
 .newsletter-fine{font-size:0.8rem;color:rgba(240,237,232,0.35);font-family:var(--font-head)}
 
@@ -124,10 +157,10 @@ section{padding:100px 2rem}
 /* FOOTER */
 footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
-.footer-logo{font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--text)}
+.footer-logo{font-family:var(--font-head);font-weight:700;font-size:1.5rem}
 .footer-tagline{font-family:var(--font-body);font-style:italic;color:rgba(240,237,232,0.45);font-size:0.9rem}
 .social-links{display:flex;gap:1.5rem}
-.social-links a{color:rgba(240,237,232,0.4);text-decoration:none;font-family:var(--font-head);font-size:0.85rem;font-weight:600;transition:color 0.2s;letter-spacing:0.05em}
+.social-links a{color:rgba(240,237,232,0.4);text-decoration:none;font-family:var(--font-head);font-size:0.85rem;font-weight:600;transition:color 0.2s}
 .social-links a:hover{color:var(--text)}
 .footer-copy{font-family:var(--font-head);font-size:0.75rem;color:rgba(240,237,232,0.25)}
 .footer-fine{font-family:var(--font-body);font-style:italic;font-size:0.8rem;color:rgba(240,237,232,0.2)}
@@ -164,10 +197,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="coming-soon-badge">Coming March 27, 2026</div>
-    <h1 class="hero-headline">
-      Most bad health science<br>isn't fake.<br>
-      <em>It's out of context.</em>
-    </h1>
+    <h1 class="hero-headline">Most bad health science<br>isn't fake.<br><em>It's out of context.</em></h1>
     <p class="hero-sub">Every episode ends with a verdict.</p>
     <div class="verdict-row">
       <span class="verdict-pill pill-upheld">✓ UPHELD</span>
@@ -195,18 +225,9 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
         <p class="about-desc">The Power of the Point applies a rigorous three-verdict framework to the health and science claims flooding your feed. Upheld. Debunked. Or — most importantly — Misframed.<br><br>Because most bad health science isn't fabricated. It's real data, stripped of context, scaled to a headline. We name that mechanism. We explain it. And we give you the tools to spot it yourself.<br><br>No wellness theater. No false balance. Just the study, the claim, and our verdict.</p>
       </div>
       <div class="verdict-cards">
-        <div class="verdict-card upheld">
-          <div class="vc-badge">✓ UPHELD</div>
-          <p>The science holds up. We tell you why, and what the evidence actually shows.</p>
-        </div>
-        <div class="verdict-card debunked">
-          <div class="vc-badge">✗ DEBUNKED</div>
-          <p>The claim failed review. We show our work.</p>
-        </div>
-        <div class="verdict-card misframed">
-          <div class="vc-badge">~ MISFRAMED</div>
-          <p>The most important verdict. Real data. Wrong conclusion. We expose the gap.</p>
-        </div>
+        <div class="verdict-card upheld"><div class="vc-badge">✓ UPHELD</div><p>The science holds up. We tell you why, and what the evidence actually shows.</p></div>
+        <div class="verdict-card debunked"><div class="vc-badge">✗ DEBUNKED</div><p>The claim failed review. We show our work.</p></div>
+        <div class="verdict-card misframed"><div class="vc-badge">~ MISFRAMED</div><p>The most important verdict. Real data. Wrong conclusion. We expose the gap.</p></div>
       </div>
     </div>
   </div>
@@ -222,29 +243,25 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/D5603AQEcQ_5TFSsqYg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715120246371?e=1747872000&v=beta&t=Iml4YyJ65oDI0M_q7sIvCkJpxzqWyG8mLRIQwj7PJZY" alt="Matt Kramer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">MK</div>
-        <div class="host-name">Matt Kramer</div>
-        <div class="host-creds">Harvard University</div>
+        <div class="host-name">Matt Kramer</div><div class="host-creds">Harvard University</div>
         <p class="host-bio">Territory manager turned podcast producer. Obsessed with the gap between what headlines claim and what studies actually show.</p>
       </div>
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/C4D03AQHzlLLpJIBmZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517337908350?e=1747872000&v=beta&t=kFkHqWJEu3Bh4V4OvOPJ3BtL1Lw7hm65OiWP8CQBLSQ" alt="Sara Lovett" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">SL</div>
-        <div class="host-name">Sara Lovett, MPH</div>
-        <div class="host-creds">Master of Public Health</div>
+        <div class="host-name">Sara Lovett, MPH</div><div class="host-creds">Master of Public Health</div>
         <p class="host-bio">The show's research anchor. Sara verifies every citation and spots the difference between correlation and causation.</p>
       </div>
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/C5603AQEqz8fF6BAlTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516961987640?e=1747872000&v=beta&t=7oqMWXf2NX-vmZULnGIl7GX0xG47cNYEOZxaT-L5I4s" alt="Lauren Snyder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">LS</div>
-        <div class="host-name">Lauren Snyder</div>
-        <div class="host-creds">Healthcare Professional</div>
-        <p class="host-bio">Brings the perspective every listener has — smart, curious, and skeptical of health claims that seem too clean to be true.</p>
+        <div class="host-name">Lauren Snyder</div><div class="host-creds">Healthcare Professional</div>
+        <p class="host-bio">Brings the perspective every listener has — smart, curious, and skeptical of claims that seem too clean to be true.</p>
       </div>
       <div class="host-card">
         <img class="host-photo" src="https://media.licdn.com/dms/image/v2/D5603AQGuKyf8W3MoeA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681837107267?e=1747872000&v=beta&t=SsNBRjMqY9YMJBkSd0q_QL28fV27pmGcT5TBZj4Kw0Y" alt="Dr. Mike Herring" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="host-photo-placeholder" style="display:none">MH</div>
-        <div class="host-name">Dr. Mike Herring, MD</div>
-        <div class="host-creds">Medical Doctor</div>
+        <div class="host-name">Dr. Mike Herring, MD</div><div class="host-creds">Medical Doctor</div>
         <p class="host-bio">The medical authority in the room. Separates what sounds medical from what is medically sound.</p>
       </div>
     </div>
@@ -256,44 +273,10 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
 <section id="episodes">
   <div class="section-inner">
     <div class="section-label">Coming Episodes</div>
-    <h2 class="section-title">Coming in March.<br>Judge for yourself.</h2>
-    <div class="episodes-grid fade-up">
-      <div class="ep-card">
-        <span class="ep-verdict misframed">~ MISFRAMED</span>
-        <div class="ep-title">The Ozempic Myth Machine</div>
-        <p class="ep-claim">"GLP-1 drugs cause muscle loss and you'll gain it all back when you stop."</p>
-        <div class="ep-coming">Coming Soon · Episode 1</div>
-      </div>
-      <div class="ep-card">
-        <span class="ep-verdict debunked">✗ DEBUNKED</span>
-        <div class="ep-title">Seed Oil Panic</div>
-        <p class="ep-claim">"Seed oils are toxic and cause obesity, cancer, and heart disease."</p>
-        <div class="ep-coming">Coming Soon · Episode 2</div>
-      </div>
-      <div class="ep-card">
-        <span class="ep-verdict debunked">✗ DEBUNKED</span>
-        <div class="ep-title">AI Said I Have Cancer</div>
-        <p class="ep-claim">"I described my symptoms to ChatGPT and it diagnosed me."</p>
-        <div class="ep-coming">Coming Soon · Episode 3</div>
-      </div>
-      <div class="ep-card">
-        <span class="ep-verdict debunked">✗ DEBUNKED</span>
-        <div class="ep-title">The 10,000 Steps Lie</div>
-        <p class="ep-claim">"Anything less than 10,000 steps is basically sedentary."</p>
-        <div class="ep-coming">Coming Soon · Episode 4</div>
-      </div>
-      <div class="ep-card">
-        <span class="ep-verdict misframed">~ MISFRAMED</span>
-        <div class="ep-title">Supplements Will Save You</div>
-        <p class="ep-claim">"Vitamin D and magnesium deficiency is behind almost every chronic disease."</p>
-        <div class="ep-coming">Coming Soon · Episode 5</div>
-      </div>
-      <div class="ep-card">
-        <span class="ep-verdict misframed">~ MISFRAMED</span>
-        <div class="ep-title">Sleep 8 Hours or Die</div>
-        <p class="ep-claim">"Less than 8 hours of sleep causes dementia and early death."</p>
-        <div class="ep-coming">Coming Soon · Episode 6</div>
-      </div>
+    <h2 class="section-title">What do <em style="font-style:italic;color:rgba(240,237,232,0.55)">you</em> think?<br>Cast your verdict.</h2>
+    <p style="font-family:var(--font-head);font-size:0.9rem;color:rgba(240,237,232,0.5);margin-bottom:2.5rem;max-width:600px">Read the headlines. Vote your verdict. See how the community lines up — then tune in March 27 to find out who got it right. <strong style="color:rgba(240,237,232,0.7)">Click any card to learn more.</strong></p>
+    <div class="episodes-grid fade-up" id="episodes-grid">
+      <!-- Injected by JS -->
     </div>
   </div>
 </section>
@@ -344,38 +327,213 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:3rem 2rem}
 </footer>
 
 <script>
-// Countdown
-function updateCountdown(){
-  const target=new Date('2026-03-27T09:00:00-06:00');
-  const now=new Date();
-  const diff=target-now;
-  if(diff<=0){document.querySelector('.countdown').innerHTML='<div style="font-family:var(--font-head);font-size:1.5rem;color:var(--green)">We\'re live! 🎙</div>';return;}
-  const d=Math.floor(diff/86400000);
-  const h=Math.floor((diff%86400000)/3600000);
-  const m=Math.floor((diff%3600000)/60000);
-  const s=Math.floor((diff%60000)/1000);
-  document.getElementById('days').textContent=String(d).padStart(2,'0');
-  document.getElementById('hours').textContent=String(h).padStart(2,'0');
-  document.getElementById('mins').textContent=String(m).padStart(2,'0');
-  document.getElementById('secs').textContent=String(s).padStart(2,'0');
+// ── CONFIG ──────────────────────────────────────────────────────────────────
+const SUPABASE_URL = 'https://npnqnsjmcyzkpoqynadr.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wbnFuc2ptY3l6a3BvcXluYWRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk3MjcxMDcsImV4cCI6MjA4NTMwMzEwN30.RNnZZc75S8pLCBK1WBk4orHa19dGbSBUlclPqWbo22E';
+
+const EPISODES = [
+  {
+    id: 'ozempic',
+    title: 'The Ozempic Myth Machine',
+    claim: '"GLP-1 drugs cause muscle loss and you\'ll gain it all back when you stop."',
+    headlines: [
+      { source: 'CNN', text: 'Many people who come off GLP-1 drugs regain weight within 2 years, review suggests', url: 'https://www.cnn.com/2026/01/08/health/weight-loss-drugs-regain-scli-intl-wellness' },
+      { source: 'Business Insider', text: 'Ozempic users could lose significant muscle mass, doctors warn', url: '#' },
+      { source: 'Daily Mail', text: 'The dark side of Ozempic: Experts warn of \'Ozempic face\' and muscle wasting', url: '#' }
+    ]
+  },
+  {
+    id: 'seedoil',
+    title: 'Seed Oil Panic',
+    claim: '"Seed oils are toxic and cause obesity, cancer, and heart disease."',
+    headlines: [
+      { source: 'Fox News', text: 'Seed oils are \'one of the most significant dietary shifts\' harming Americans, experts say', url: '#' },
+      { source: 'New York Post', text: 'The scary truth about seed oils hiding in your food — and what to eat instead', url: '#' },
+      { source: 'The Guardian', text: 'Seed oil sceptics are winning the internet. Are they right?', url: '#' }
+    ]
+  },
+  {
+    id: 'ai-diagnosis',
+    title: 'AI Said I Have Cancer',
+    claim: '"I described my symptoms to ChatGPT and it diagnosed me."',
+    headlines: [
+      { source: 'Washington Post', text: 'People are using ChatGPT as their doctor. Here\'s what can go wrong.', url: '#' },
+      { source: 'NBC News', text: '\'It saved my life\': Patients credit AI chatbots with catching diagnoses their doctors missed', url: '#' },
+      { source: 'Healthline', text: 'ChatGPT performs as well as doctors in diagnosing some conditions, study finds', url: '#' }
+    ]
+  },
+  {
+    id: '10k-steps',
+    title: 'The 10,000 Steps Lie',
+    claim: '"Anything less than 10,000 steps is basically sedentary."',
+    headlines: [
+      { source: 'TIME', text: 'You Don\'t Need 10,000 Steps a Day. Here\'s How Many You Actually Need', url: '#' },
+      { source: 'Today', text: '10,000 steps a day: Is the goal actually backed by science?', url: '#' },
+      { source: 'Vox', text: 'The 10,000 steps rule is arbitrary. Science says way less is fine.', url: '#' }
+    ]
+  },
+  {
+    id: 'supplements',
+    title: 'Supplements Will Save You',
+    claim: '"Vitamin D and magnesium deficiency is behind almost every chronic disease."',
+    headlines: [
+      { source: 'Healthline', text: '8 Signs and Symptoms of Magnesium Deficiency (Most Americans Are Deficient)', url: '#' },
+      { source: 'Medical News Today', text: 'Vitamin D deficiency linked to dementia, depression, and heart disease', url: '#' },
+      { source: 'Men\'s Health', text: 'Why Every Man Should Be Taking These 3 Supplements Daily', url: '#' }
+    ]
+  },
+  {
+    id: 'sleep',
+    title: 'Sleep 8 Hours or Die',
+    claim: '"Less than 8 hours of sleep causes dementia and early death."',
+    headlines: [
+      { source: 'The Guardian', text: 'Sleeping fewer than six hours linked to higher risk of dementia, study shows', url: '#' },
+      { source: 'BBC', text: 'Sleep deprivation is a \'public health crisis\', scientists warn', url: '#' },
+      { source: 'CNN', text: 'Getting less than 7 hours of sleep may age your brain by years, study says', url: '#' }
+    ]
+  }
+];
+
+// ── VISITOR ID ───────────────────────────────────────────────────────────────
+function getVisitorId() {
+  let id = localStorage.getItem('pop_visitor_id');
+  if (!id) { id = 'v_' + Math.random().toString(36).substr(2,9) + Date.now(); localStorage.setItem('pop_visitor_id', id); }
+  return id;
+}
+
+// ── SUPABASE HELPERS ─────────────────────────────────────────────────────────
+async function fetchVotes(episodeId) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/pop_votes?episode_id=eq.${episodeId}&select=verdict`, {
+      headers: { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}` }
+    });
+    const rows = await res.json();
+    const counts = { upheld: 0, debunked: 0, misframed: 0 };
+    rows.forEach(r => { if (counts[r.verdict] !== undefined) counts[r.verdict]++; });
+    return counts;
+  } catch { return { upheld: 0, debunked: 0, misframed: 0 }; }
+}
+
+async function submitVote(episodeId, verdict) {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/pop_votes`, {
+      method: 'POST',
+      headers: { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ episode_id: episodeId, verdict, visitor_id: getVisitorId() })
+    });
+  } catch {}
+}
+
+// ── RENDER VOTE BARS ─────────────────────────────────────────────────────────
+function renderBars(counts) {
+  const total = counts.upheld + counts.debunked + counts.misframed || 1;
+  const pct = v => Math.round((counts[v] / total) * 100);
+  return `
+    <div class="vote-bars">
+      <div class="vote-bar-row"><span class="vote-bar-label upheld">✓ UPHELD</span><div class="vote-bar-track"><div class="vote-bar-fill upheld" style="width:${pct('upheld')}%"></div></div><span class="vote-bar-pct">${pct('upheld')}%</span></div>
+      <div class="vote-bar-row"><span class="vote-bar-label debunked">✗ DEBUNKED</span><div class="vote-bar-track"><div class="vote-bar-fill debunked" style="width:${pct('debunked')}%"></div></div><span class="vote-bar-pct">${pct('debunked')}%</span></div>
+      <div class="vote-bar-row"><span class="vote-bar-label misframed">~ MISFRAMED</span><div class="vote-bar-track"><div class="vote-bar-fill misframed" style="width:${pct('misframed')}%"></div></div><span class="vote-bar-pct">${pct('misframed')}%</span></div>
+    </div>
+    <div class="vote-total">${counts.upheld + counts.debunked + counts.misframed} votes cast</div>`;
+}
+
+// ── BUILD EPISODE CARDS ──────────────────────────────────────────────────────
+async function buildCards() {
+  const grid = document.getElementById('episodes-grid');
+  const userVotes = JSON.parse(localStorage.getItem('pop_user_votes') || '{}');
+
+  for (const ep of EPISODES) {
+    const counts = await fetchVotes(ep.id);
+    const hasVoted = !!userVotes[ep.id];
+    const headlinesHTML = ep.headlines.map(h => `
+      <a class="ep-headline-link" href="${h.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        <span class="ep-source">${h.source}</span>${h.text}
+      </a>`).join('');
+
+    const voteBtns = hasVoted
+      ? renderBars(counts)
+      : `<div class="vote-btns">
+          <button class="vote-btn upheld" onclick="castVote(event,'${ep.id}','upheld')">✓ Upheld</button>
+          <button class="vote-btn debunked" onclick="castVote(event,'${ep.id}','debunked')">✗ Debunked</button>
+          <button class="vote-btn misframed" onclick="castVote(event,'${ep.id}','misframed')">~ Misframed</button>
+        </div>`;
+
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.id = `card-${ep.id}`;
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-front" onclick="flipCard('${ep.id}')">
+          <div class="ep-title">${ep.title}</div>
+          <p class="ep-claim">${ep.claim}</p>
+          <div class="ep-headlines">${headlinesHTML}</div>
+          <div class="vote-section">
+            <div class="vote-prompt">What's your verdict?</div>
+            <div id="vote-area-${ep.id}">${voteBtns}</div>
+          </div>
+          <div class="flip-hint">tap to flip ↻</div>
+        </div>
+        <div class="flip-back">
+          <div class="flip-back-icon">🔒</div>
+          <div class="flip-back-title">${ep.title}</div>
+          <p class="flip-back-msg">Our verdict is sealed until the episode drops. The science has been read. The conclusion has been reached. You'll find out if you got it right on launch day.</p>
+          <div class="flip-back-date">Revealed March 27, 2026</div>
+          <button class="flip-back-btn" onclick="flipCard('${ep.id}')">← flip back</button>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  }
+}
+
+function flipCard(id) {
+  document.getElementById(`card-${id}`).classList.toggle('flipped');
+}
+
+async function castVote(e, epId, verdict) {
+  e.stopPropagation();
+  const userVotes = JSON.parse(localStorage.getItem('pop_user_votes') || '{}');
+  if (userVotes[epId]) return;
+  userVotes[epId] = verdict;
+  localStorage.setItem('pop_user_votes', JSON.stringify(userVotes));
+  await submitVote(epId, verdict);
+  const counts = await fetchVotes(epId);
+  document.getElementById(`vote-area-${epId}`).innerHTML = renderBars(counts);
+}
+
+// ── COUNTDOWN ────────────────────────────────────────────────────────────────
+function updateCountdown() {
+  const target = new Date('2026-03-27T09:00:00-06:00');
+  const diff = target - new Date();
+  if (diff <= 0) { document.querySelector('.countdown').innerHTML = '<div style="font-family:var(--font-head);font-size:1.5rem;color:var(--green)">We\'re live! 🎙</div>'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('days').textContent = String(d).padStart(2, '0');
+  document.getElementById('hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('mins').textContent = String(m).padStart(2, '0');
+  document.getElementById('secs').textContent = String(s).padStart(2, '0');
 }
 updateCountdown();
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
 
-// Scroll animations
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
-},{threshold:0.15});
-document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+// ── SCROLL ANIMATIONS ────────────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Newsletter
-function handleSubscribe(e){
+// ── NEWSLETTER ───────────────────────────────────────────────────────────────
+function handleSubscribe(e) {
   e.preventDefault();
-  const btn=e.target.querySelector('button');
-  btn.textContent='✓ You\'re on the list!';
-  btn.style.background='var(--green)';
-  btn.disabled=true;
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ You\'re on the list!';
+  btn.style.background = 'var(--green)';
+  btn.disabled = true;
 }
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+buildCards();
 </script>
 </body>
 </html>
